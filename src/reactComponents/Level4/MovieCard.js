@@ -6,7 +6,7 @@ import tachyons from "tachyons";
 const MovieCard = (props) => {
   const { data } = props;
   return (
-    <div className="card-item">
+    <div className="card-item ma2">
       <Link to={`/movie/${data.imdbID}`}>
         <div className="card-inner">
           <div className="card-top">

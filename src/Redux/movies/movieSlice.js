@@ -2,12 +2,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import movieApi from "../../common/apis/movieApi";
 import { APIkey } from "../../common/apis/APIkey";
 
+
 export const fetchAsyncMovies = createAsyncThunk(
   "movies/fetchAsyncMovies",
-  async () => {
-    const movieText = "Harry";
+  async (term) => {
     const response = await movieApi.get(
-      `?apiKey=${APIkey}&s=${movieText}&type=movie`
+      `?apiKey=${APIkey}&s=${term}&type=movie`
     );
     return response.data;
   }
@@ -15,10 +15,9 @@ export const fetchAsyncMovies = createAsyncThunk(
 
 export const fetchAsyncShows = createAsyncThunk(
   "shows/fetchAsyncShows",
-  async () => {
-    const seriesText = "Friends";
+  async (term) => {
     const response = await movieApi.get(
-      `?apiKey=${APIkey}&s=${seriesText}&type=series`
+      `?apiKey=${APIkey}&s=${term}&type=series`
     );
     return response.data;
   }
@@ -75,3 +74,11 @@ export default movieSlice.reducer;
 export const getAllMovies = (state) => state.movies.movies;
 export const getAllShows = (state) => state.movies.shows;
 export const getSelectedMovieOrShow = (state) => state.movies.selectedMovieOrShow;
+
+
+/*
+*THINGS TO DO TOMORROW
+1: add loading icon for when switching titles
+2: clean us css
+3: fix undefined error that came up
+*/

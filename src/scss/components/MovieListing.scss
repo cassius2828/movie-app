@@ -2,7 +2,7 @@
 
 .movie-list,
 .show-list  {
-    margin: 20px 0;
+    margin: 20px 30px;
     h2 {
         color: $font-primary;
         margin-bottom: 10px;
@@ -10,9 +10,9 @@
     }
 }
 
-.movie-container,
-.show-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    grid-gap: 1rem;
-}
+// .movie-container,
+// .show-container {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+//     grid-gap: 1rem;
+// }

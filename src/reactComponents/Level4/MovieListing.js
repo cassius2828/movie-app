@@ -3,9 +3,12 @@ import { useSelector } from "react-redux";
 import { getAllMovies, getAllShows } from "../../Redux/movies/movieSlice";
 import MovieCard from "./MovieCard";
 import "../../scss/components/MovieListing.scss";
+import Slider from 'react-slick';
+import { Settings } from "../../Settings";
 import tachyons from "tachyons";
 
 const MovieListing = () => {
+
   const movies = useSelector(getAllMovies);
   const shows = useSelector(getAllShows);
   let renderMovies,
@@ -36,11 +39,15 @@ const MovieListing = () => {
     <div className="movie-wrapper">
       <div className="movie-list tc pa2">
         <h2>Movies</h2>
-        <div className="movie-container">{renderMovies}</div>
+        <div className="movie-container">
+          <Slider {...Settings}>{renderMovies}</Slider>
+        </div>
       </div>
       <div className="show-list tc pa2">
         <h2>Shows</h2>
-        <div className="show-container">{renderShows}</div>
+        <div className="show-container">
+          <Slider {...Settings}>{renderShows}</Slider>
+        </div>
       </div>
     </div>
   );

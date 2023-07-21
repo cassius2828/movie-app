@@ -21,3 +21,20 @@
     width: 39px;
     height: 39px;
 }
+
+.searchbar {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+
+input {
+    font-size: 18px;
+    padding: 1rem;
+}
